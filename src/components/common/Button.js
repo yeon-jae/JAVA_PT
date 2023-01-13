@@ -1,5 +1,5 @@
-import { getByPlaceholderText } from '@testing-library/react';
-import styled, { withTheme } from 'styled-components';
+/*import { getByPlaceholderText } from '@testing-library/react';*/
+import styled, { css } from 'styled-components';
 import palette from '../../lib/styles/palette';
 
 const StyledButton =styled.button`
@@ -14,8 +14,25 @@ const StyledButton =styled.button`
 
     background-color:${palette.gray[8]};
     &:hover{
-        background:${palette.gray[6]}
+        background:${palette.gray[6]};
     }
+
+    ${props=>
+        props.fullWidth&& 
+        css`
+            padding-top:0.75rem;
+            padding-bottom:0.75rem;
+            width:100%;
+            font-size:1.125rem;
+        `}
+    ${props=>
+        props.cyan&&
+        css`
+            background:${palette.cyan[5]};
+            $:hover{
+                background:${palette.cyan[4]};
+            }
+        `}
     `;
 
     const Button = props =><StyledButton{...props}/>;
