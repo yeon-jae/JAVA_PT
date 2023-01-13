@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import {Route, Routes} from 'react-router-dom';
 import PostListPage  from './pages/PostListPage';
 import LoginPage from './pages/LoginPage';
