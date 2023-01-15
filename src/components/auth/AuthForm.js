@@ -57,12 +57,12 @@ const ErrorMessage= styled.div`
     margin-top:1rem;
 `
 
-const AuthForm=({type, form, onChange, onSubmit})=>{
+const AuthForm=({type, form, onChange, onSubmit,error})=>{
     const text=textMap[type];
     return(
         <AuthFormBlock>
             <h3>{text}</h3>
-            <form>
+            <form onSubmit={onSubmit}>
                 <StyledInput 
                     autoComplete="username"
                     name="username"
@@ -89,7 +89,7 @@ const AuthForm=({type, form, onChange, onSubmit})=>{
                         value={form.passwordConfirm}
                     />
                 )}
-                <ErrorMessage>에러발생!</ErrorMessage>
+                {error&&<ErrorMessage>{error}</ErrorMessage>}
                 <ButtonWithMarginTop cyan fullWidth style={{marginTop:'1rem'}}>
                     {text}
                 </ButtonWithMarginTop>
@@ -104,6 +104,4 @@ const AuthForm=({type, form, onChange, onSubmit})=>{
         </AuthFormBlock>
     );
 };
-
-
 export default AuthForm;
