@@ -9,6 +9,7 @@ public class UserWeb extends Customer {
         System.out.println("접속 경로: Web");
         System.out.println("이름: " + getName());
         System.out.println("등급: " + getGrade());
-        System.out.println("결제 방식: " + (getGrade() == Grade.GOLD ? "보너스 방식" : "할인 방식"));
+        System.out.println("결제 방식: " + (getGrade() == Grade.GOLD ? "할인 결제 방식" : "보너스 방식"));
     }
+
 }
