@@ -5,6 +5,8 @@ public abstract class Customer {
     public Grade grade;
     public Discount discount;
 
+
+
     //등급 enum
     public enum Grade {
         BRONZE(0.1),
