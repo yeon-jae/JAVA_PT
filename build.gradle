@@ -18,8 +18,11 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:10.1.11'
+	implementation 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.1'
+	implementation 'org.eclipse.jetty:glassfish-jstl:11.0.15'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }
 
 
