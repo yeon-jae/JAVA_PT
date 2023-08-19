@@ -9,7 +9,7 @@
         <h1>welcome to my page!!!</h1>
     </div>
     <div>Your name: ${name}</div>
-    <div>Your password: ${password}</div>
+
 
 </body>
 </html>
