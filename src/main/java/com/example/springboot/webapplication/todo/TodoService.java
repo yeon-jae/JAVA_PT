@@ -10,15 +10,22 @@ public class TodoService {
     //1.list 로 투두리스트 담음
     private static List<Todo> todos= new ArrayList<>();//2. 정적 리스트로 변환
     //3. 정적 변수를 초기화할때는 static블록을 만들어야 함
+    private static int todosCount=0;
+
     static {
-        todos.add(new Todo(1,"moya","Learn Java",
+        todos.add(new Todo(++todosCount,"moya","Learn Java",
                 LocalDate.now().plusYears(1), false));
-        todos.add(new Todo(2,"yheon","LearnMSA",
+        todos.add(new Todo(++todosCount,"yheon","LearnMSA",
                 LocalDate.now().plusYears(2), false));
-        todos.add(new Todo(3,"yeon","Learn JWT",
+        todos.add(new Todo(++todosCount,"yeon","Learn JWT",
                 LocalDate.now().plusYears(3), false));
     }
     public List<Todo> findByUserName(String username){
         return todos;
+    }
+
+    public void addTodo(String username, String description, LocalDate targetDate, boolean done){
+        Todo todo= new Todo(++todosCount,username,description,targetDate,done);
+        todos.add(todo);
     }
 }
