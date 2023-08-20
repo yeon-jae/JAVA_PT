@@ -1,11 +1,14 @@
 package com.example.springboot.webapplication.todo;
 
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 public class Todo {
     //1.멤버변수_세부 정보 저장
     private int id;
     private String username;
+    @Size(min = 10, message = "Enter at least 10 characters")
     private String description;
     private LocalDate targetDate;
     private boolean done;
