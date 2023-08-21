@@ -56,6 +56,25 @@ public class TodoController {
         //delete todolist
         todoService.deleteById(id);
         return "redirect:list-todos";
-
+    }
+    
+    //수정 사항 get 메소드
+    @RequestMapping(value = "update-todo",method = RequestMethod.GET)
+    public String showUpdateTodoPage(@RequestParam int id, ModelMap model){
+        //updatetodo
+       Todo todo=todoService.findById(id);
+       model.addAttribute("todo",todo);
+        return "todo";
+    }
+    //update post메소드
+    @RequestMapping(value = "update-todo", method = RequestMethod.POST)
+    public String updateTodo(ModelMap model, @Valid Todo todo, BindingResult result){
+        if(result.hasErrors()){
+            return "todo";
+        }
+        String username=(String)model.get("name");
+        todo.setUsername(username);
+        todoService.updateTodo(todo);
+        return "redirect:list-todos";
     }
 }
