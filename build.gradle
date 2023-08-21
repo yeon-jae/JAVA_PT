@@ -25,6 +25,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation:3.1.2'
 	implementation 'org.webjars.npm:bootstrap-datepicker:1.9.0'
 	implementation 'org.webjars.bower:bootstrap-datepicker:1.9.0'
+	implementation 'org.springframework.boot:spring-boot-starter-security:3.1.2'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
