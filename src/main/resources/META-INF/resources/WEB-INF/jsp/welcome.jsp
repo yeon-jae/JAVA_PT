@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome Page</title>
-</head>
-<body>
-    <div class="container">
-          <div>
-                <h1>welcome to my page!!!</h1>
-            </div>
-            <div>Your name: ${name}</div>
-            <div><a href="list-todos">manage></a> your todos </div>
-
-    </div>
-
-</body>
-</html>
+<%@ include file="common/header.jsp" %>
+<%@ include file="common/navigation.jsp" %>
+<div class="container">
+	<h1>Welcome ${name}</h1>
+	<a href="list-todos">Manage</a> your todos
+</div>
+<%@ include file="common/footer.jsp" %>
